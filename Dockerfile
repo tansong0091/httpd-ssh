@@ -2,6 +2,7 @@ FROM httpd:2.4
 COPY ./test.html/ /usr/local/apache2/htdocs/dist/test.html
 COPY entrypoint.sh /entrypoint.sh
 COPY conf/httpd.conf /usr/local/apache2/conf/
+COPY mod_jk.so /usr/local/apache2/modules/mod_jk.so
 
 RUN apt-get update \
     && apt-get install -y vim procps openssh-server \
